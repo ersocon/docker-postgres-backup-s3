@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  postgres-backup:
+    container_name: ersocon-postgres-backup-s3
+    restart: always
+    image: ersocon/postgres-backup-s3:11
+
+    volumes:
+      - ./config:/config
+  
+    environment:
+      S3_BUCKET: {{YOUR_BUCKET}}
+      PGDATABASE: {{YOUR_DATABASE}}
+      PGHOST: {{YOUR_HOST}}
+      PGPORT: {{YOUR_POST}}
+      PGPASSWORD: {{YOUR_PASSWORD}}
+      PGUSER: {{YOUR_USER}}
+    
