@@ -7,7 +7,7 @@ RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-k
 
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch"-pgdg main | tee  /etc/apt/sources.list.d/pgdg.list
 
-RUN apt-get update && apt-get -y install postgresql-11
+RUN apt-get update && apt-get -y install postgresql-13
 
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/backup-cron
